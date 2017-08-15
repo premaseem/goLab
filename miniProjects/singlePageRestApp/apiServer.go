@@ -22,6 +22,11 @@ type Address struct {
 
 var people []Person
 
+
+func GetPeopleEndpoint(w http.ResponseWriter, req *http.Request) {
+	json.NewEncoder(w).Encode(people)
+}
+
 func GetPersonEndpoint(w http.ResponseWriter, req *http.Request) {
 	params := mux.Vars(req)
 	for _, item := range people {
@@ -33,9 +38,7 @@ func GetPersonEndpoint(w http.ResponseWriter, req *http.Request) {
 	json.NewEncoder(w).Encode(&Person{})
 }
 
-func GetPeopleEndpoint(w http.ResponseWriter, req *http.Request) {
-	json.NewEncoder(w).Encode(people)
-}
+
 
 func CreatePersonEndpoint(w http.ResponseWriter, req *http.Request) {
 	params := mux.Vars(req)
