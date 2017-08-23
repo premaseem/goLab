@@ -1,6 +1,8 @@
 package main
 
+import     "fmt"
 import "time"
+
 
 type Todo struct {
 	Name      string    `json:"name"`
@@ -9,3 +11,12 @@ type Todo struct {
 }
 
 type Todos []Todo
+
+
+var list = Todos{
+Todo{Name:true, Name:"aseem"},
+}
+
+func kill()  {
+	fmt.Print("hanuman")
+}
