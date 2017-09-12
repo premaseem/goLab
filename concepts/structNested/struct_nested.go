@@ -14,7 +14,7 @@ type Address struct{
 	street2 string
 	city    string
 	state   string
-	Zip
+	zip Zip
 }
 
 // Zip defines a Zip code (eg: 12345-1105)
@@ -37,7 +37,7 @@ func main(){
 	people[p.name] = p
 
 	for _, p = range people{
-		fmt.Printf("%v lives in %v, %v \n", p.name, p.city, p.code  )
+		fmt.Printf("%v lives in %v, %v \n", p.name, p.city, p.zip.code  )
 	}
 
 	//output seems nested or contains
