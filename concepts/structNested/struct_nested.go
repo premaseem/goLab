@@ -1,5 +1,6 @@
 package main
 
+import "fmt"
 
 type Person struct {
 	name string
@@ -22,5 +23,23 @@ type Zip struct {
 	pobox string
 }
 
+func main(){
+	var people map[string] Person  // nil map
+
+	people = make(map[string]Person)
+
+	var p Person  // declaration
+	p = Person{"Mary", 35, "011-13-4567",
+		Address{"1 First St", "we", "Brooklyn", "NY",
+			Zip{"11212", "333"}},
+	}
+
+	people[p.name] = p
+
+	for _, p = range people{
+		fmt.Printf("%v lives in %v, %v \n", p.name, p.address, p.address.zip  )
+	}
+
+}
 
 
