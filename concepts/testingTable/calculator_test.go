@@ -1,10 +1,7 @@
 package main
-
 import "testing"
 
-
 func Test_multiplication(t *testing.T) {
-
 	type inputParams struct{
 		v1 int
 		v2 int
@@ -20,10 +17,11 @@ func Test_multiplication(t *testing.T) {
 	}
 
 	for _,useCase := range tests{
-		got := multiplication(useCase.inputParams.v1, useCase.inputParams.v2)
-		if got != useCase.expected {
-			t.Errorf("got %v, expected %v \n", got, useCase.expected)
-		}
+		t.Run("multiplication tests ", func(t *testing.T) {
+			if got := multiplication(useCase.inputParams.v1, useCase.inputParams.v2); got != useCase.expected {
+				t.Errorf("mul() = %v, want %v", got, useCase.expected)
+			}
+		})
 	}
 
 
