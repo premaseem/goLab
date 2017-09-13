@@ -34,7 +34,7 @@ func Test_addition(t *testing.T){
 	testCases := tests {
 		{inputParams{0, 0}, 0},
 		{inputParams{1, 1}, 2},
-		{inputParams{-2, -2}, -4},
+		{inputParams{v1 : -2, v2: -2}, -4},
 	}
 
 	for _,useCase := range testCases{
