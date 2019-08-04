@@ -6,10 +6,19 @@ type bot interface {
 	getGreeting() string
 }
 
+type chat interface {
+	chitCat() string
+}
+
+type chatbot interface {
+	chat
+	bot
+}
+
 type engBot struct{}
 type spBot struct{}
 
-func print(b bot) {
+func print(b chatbot) {
 	fmt.Println(b.getGreeting())
 }
 
@@ -18,6 +27,14 @@ func (engBot) getGreeting() string {
 }
 
 func (spBot) getGreeting() string {
+	return "hola"
+}
+
+func (engBot) chitCat() string {
+	return "hello"
+}
+
+func (spBot) chitCat() string {
 	return "hola"
 }
 
