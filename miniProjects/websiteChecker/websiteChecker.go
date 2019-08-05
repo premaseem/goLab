@@ -1,5 +1,8 @@
 package main
 
+// This program takes a list of website and checks the health status and reports
+// whether website is up or down
+
 import (
 	"fmt"
 	"net/http"
@@ -20,16 +23,21 @@ func main() {
 	for _, url := range siteList {
 		go checkSite(url, c)
 	}
-	for l := range c {
-		func(il string) {
+
+	for message := range c {
+
+		func(msg string) {
 			time.Sleep(5 * time.Second)
-			go checkSite(il, c)
-		}(l)
+			// calling another routine
+			go checkSite(msg, c)
+
+		}(message)
 	}
 }
 
 func checkSite(url string, c chan string) {
 	_, err := http.Get(url)
+
 	if err != nil {
 		fmt.Println(url, " site is down")
 		c <- url
