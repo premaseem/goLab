@@ -6,7 +6,9 @@ Insall library
 $ brew update && brew install golang
 
 Setup work space - It’s considered best practice to use $HOME/go location for your workspace, so let’s do that! 
-$ mkdir -p $HOME/go/{bin,src,pkg}
+```
+mkdir -p $HOME/go/{bin,src,pkg}
+```
 
 Setup Environment variabe in .zshrc or .bash
 ```
