@@ -20,4 +20,5 @@ export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 ## Is go platform independent? 
 you go cross-platform same as you would with C, compile to your target OS and CPU, and it’s largely up to you to make things work.
 Mostly it’ll just be file paths, i.e. like C:\blah on Windows, rather than /blah on Linux.
+By setting GOOS and GOARCH environment variables the compiler will produce executable for the destination platform.
 
