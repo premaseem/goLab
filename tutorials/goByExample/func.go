@@ -3,18 +3,18 @@ package main
 import "fmt"
 
 func main() {
-	sm, dff := sumAndMultiply(5, 2, 5, 5)
-	fmt.Println("sum is ", sm, " and diff is ", dff)
+	sm, dff := sumAndProduct(5, 2, 5, 5)
+	fmt.Println("sum is ", sm, " and product is ", dff)
 
 }
 
-func sumAndMultiply(a ...int) (int, int) {
+func sumAndProduct(a ...int) (int, int) {
 	fmt.Println(a)
 	var sum int
-	var dff int
+	var prd int = 1
 	for _, v := range a {
 		sum += v
-		dff -= v
+		prd *= v
 	}
-	return sum, dff
+	return sum, prd
 }
